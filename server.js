@@ -96,6 +96,9 @@ app.get('/', function (req, res) {
 app.get('/test', function(req,res){
   res.send("{titulo:'Generali',secuenciador:20220401, descripcion:'Este es el elemento principal'}");
 });
+app.get('/testin', function(req,res){
+  res.send("{titulo:'Generali Security Volters',secuenciador:20220405, descripcion:'Este es el elemento principal de todos los elementos'}");
+});
 app.get('/pagecount', function (req, res) {
   // try to initialize the db on every request if it's not already
   // initialized.
