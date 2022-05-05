@@ -7,7 +7,27 @@ Object.assign=require('object-assign')
 
 app.engine('html', require('ejs').renderFile);
 app.use(morgan('combined'))
+var mysql = require('mysql');
+const formidable = require('formidable');
+const fs = require('fs');
+app.use(express.static(__dirname + "/client"));
+app.use(bodyParser.json());
 
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
+// set path for static assets
+app.use(express.static(path.join(__dirname, 'public')));
+const db = require("./models");
+db.sequelize.sync();
+const { testQueue} = require('./routes/getdata');
+Newapi = require("./routes/index");
+Genre = require("./models/genre");
+Book = require("./models/book");
+Msg = require("./models/msg");
+const {getHomePage, letItbe, getComputo} = require('./routes/procsa');
 var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
     ip   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0',
     mongoURL = process.env.OPENSHIFT_MONGODB_DB_URL || process.env.MONGO_URL,
@@ -72,7 +92,14 @@ var initDb = function(callback) {
     console.log('Connected to MongoDB at: %s', mongoURL);
   });
 };
-
+app.get('/procesar', procesarXLS);
+function procesarXLS(req, res, next)
+{
+    if (req.method == "GET"){
+      var nom = req.query.nombre;
+      res.render('procesado', {nombre:nom});
+    }
+}
 app.get('/', function (req, res) {
   // try to initialize the db on every request if it's not already
   // initialized.

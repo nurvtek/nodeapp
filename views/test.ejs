@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Registro y Test</title>
+ 
+    
+    <link href="http://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+ 
+    <link href="https://v4-alpha.getbootstrap.com/examples/narrow-jumbotron/narrow-jumbotron.css" rel="stylesheet">
+    <link href="../static/signup.css" rel="stylesheet">
+    <script src='../static/js/jquery-3.6.0.min.js'></script>
+    
+  </head>
+ 
+  <body>
+ 
+    <div class="container">
+      <div class="header">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" ><a href="main">Home</a></li>
+            <li role="presentation"><a href="/SignIn">Sign In</a></li>
+            <li role="presentation" class="active"><a href="/SignUp">Sign Up</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">Instrumentos de Diagnostico</h3>
+      </div>
+ 
+      <div class="jumbotron">
+        <h1>Datos Contacto</h1>
+        <form class="form-control">
+        <label for="inputName" class="sr-only">Nombre y Apellido</label>
+        <input type="name" name="inputName" id="inputName" class="form-control" placeholder="Jorge Ramones" required autofocus>
+        <label for="inputEmail" class="sr-only">Direccion Email</label>
+        <input type="email" name="inputEmail" id="inputEmail" class="form-control" placeholder="Direccion Email" required autofocus>
+        <label for="inputEmpresa" class="sr-only">Organizacion</label>
+        <input type="name" name="inputEmpresa" id="inputEmpresa" class="form-control" placeholder="Carozzi" required>
+        <label for="inputTelefono" class="sr-only">Telefono</label>
+        <input type="name" name="inputTelefono" id="inputTelefono" class="form-control" placeholder="Carozzi" required>
+        <label for="inputSector" class="sr-only">Sector Comercial</label>
+        <select name="inputSector" id="inputSector" class="form-control" >
+            <option value="Banca">Banca y Finanzas</option>
+            <option value="Seguros">Seguros</option>
+            <option value="Servicio">Servicios</option>
+            <option value="Retail">Retail</option>
+        </select>
+        <br>
+        </form>
+        
+        <h1>Objetivos Estratégicos</h1>
+        
+        <label for="pregunta1" class="sr-only"><strong>Los objetivos estrategicos de la organización tienen relación con:</strong></label>
+        <br>
+        <input type="radio" id="dat1" name="dat1" value="Datos personales de los trabajadores">
+        <label for="dat1">Datos personales de los trabajadores</label>
+        <br>
+        <input type="radio" id="dat1" name="dat1" value="Datos personales de los Proveedores">
+        <label for="dat1">Datos personales de los Proveedores</label>
+        <br>
+        <input type="radio" id="dat1" name="dat1" value="Datos personales de los Clientes">
+        <label for="dat1">Datos personales de los Clientes</label>
+        <br>
+        <button id="btnSignUp" class="btn btn-lg btn-primary btn-block" type="button">Test</button>
+           
+        <div id="base"></div>
+      
+      </div>
+ 
+       
+ 
+      <footer class="footer">
+        <p>&copy; Tuwe 2015</p>
+      </footer>
+ 
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#btnSignUp').click(function() {
+         
+                $.ajax({
+                    url: '/signUp',
+                    data: $('form').serialize(),
+                    type: 'POST',
+                    success: function(response) {
+                        var data = response;
+
+                        var parsed = JSON.parse(data);
+
+                        document.getElementById('base').innerHTML = parsed.html;
+                        console.log(response);
+                    },
+                    error: function(error) {
+                        console.log(error);
+                    }
+                });
+            });
+        });
+    </script>
+  </body>
+</html>

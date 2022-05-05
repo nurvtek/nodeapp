@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <%- include('partials/head'); -%> 
+</head>
+<body>
+<%- include('partials/menu'); -%>
+<div class="container-fluid bg-3 text-center">  
+  <table style="width:100%">
+      <tr>
+        <td width="10%">
+            <div class="row">
+              <div class="col">
+               <div class="vmenu">
+                 <div class="row">
+                   <div class="col-sm-8"> 
+                     <a id="abrir" class="abrir-cerrar"  href="/liste" onclick="mostrar()">
+                        INSTRUMENTOS LIBRES
+                     </a>
+                   </div>
+                 </div>
+                   <div class="row">
+                   <div class="col-sm-8"> 
+                     <hr>
+                   </div>
+                 </div>
+                 <div class="row">
+                   <div class="col-sm-8">
+                     <a id="cerrar" class="abrir-cerrar" href="/listr" onclick="ocultar()">
+                      INSTRUMENTOS ASOCIADOS
+                     </a>
+                   </div>
+                 </div>
+               </div>
+              </div>
+           </div>
+           </td>
+           <td td width="85%">
+            <div class="buzon-page">
+            
+             
+            
+            
+                  <div class="bform">
+                    <h4><%= page %></h4><br>
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <form action="/uploadfile" method="post" enctype="multipart/form-data">
+                          <b>Instrumento Formato XLS</b> 
+                          <br>
+                          <br>
+                          <input style="width:800" type="file" name="instrumento" id="instrumento"/>
+                         
+                          <br>
+                          <input class="btn btn-primary" type="submit" style="border-radius: 4px;" name="cashbackfiles" value="Cargar">
+                      </form>
+
+                      </div>
+
+                    </div>
+                  </div>
+           
+                </td>
+                </tr>
+           </div>
+       </div>
+       </body>
+       <%- include('partials/script'); -%>
+       </html>

@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Registro y Test</title>
+ 
+    <link href="http://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+ 
+    <link href="https://v4-alpha.getbootstrap.com/examples/narrow-jumbotron/narrow-jumbotron.css" rel="stylesheet">
+    <link href="../static/signup.css" rel="stylesheet">
+    <script src='../static/js/jquery-3.6.0.min.js'></script>
+    
+    
+  </head>
+ 
+  <body>
+ 
+    <div class="container">
+      <div class="header">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" ><a href="main">Home</a></li>
+            <li role="presentation"><a href="showSignUp">Registro</a></li>
+            <li role="presentation" class="active"><a href="showLogin">Ingreso</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">Evaluar Cumplimiento Seguridad Datos Personales</h3>
+      </div>
+ 
+      <div id='registro' class="jumbotron jumbotron-fluid">
+       <div class="container-fluid">
+        <h1>Registro</h1>
+        <form class="form-signin">
+        <label for="inputName" class="sr-only">Nombre y Apellido</label>
+        <input type="name" name="inputName" id="inputName" class="form-control" placeholder="Nombres Apellidos" required autofocus>
+        <label for="inputEmail" class="sr-only">Direccion Email</label>
+        <input type="email" name="inputEmail" id="inputEmail" class="form-control" placeholder="Direccion Email" required autofocus>
+        <label for="inputEmpresa" class="sr-only">Empresa</label>
+        <input type="name" name="inputEmpresa" id="inputEmpresa" class="form-control" placeholder="Nombre Organización" required>
+        <label for="inputTelefono" class="sr-only">Telefono</label>
+        <input type="name" name="inputTelefono" id="inputTelefono" class="form-control" placeholder="Nro Telefono" >
+        <label for="sectores" class="sr-only">Sector </label>
+        <select id="sectores" class="form-control" name="sectores" required>
+            <option value="Banca y Finanzas">Banca y Finanzas</option>
+            <option value="Seguros">Seguros</option>
+            <option value="Retail">Retail</option>
+            <option value="Servicios">Servicios</option>
+        </select>
+        <br>
+        <!-- button id="btnSignUp" class="btn btn-lg btn-primary btn-block" type="button">Test</button   -->
+        <button id="btntest" class="btn btn-lg btn-primary btn-block" onclick="tomaTest();" type="button">Test</button>
+        <div id="base"></div>
+      </form>
+      </div>
+ 
+    </div>
+    <div id="test" style="visibility:hidden" class="jumbotron jumbotron-fluid">
+        <div class="container-fluid">
+         <h1>Test de Evaluacion</h1><br><br><hr></hr>
+<form action="/computador" method="get">
+<input type="hidden" id="codproc" name="codproc" value="803c8d6ab08628a7ede03293a1bc2a729b12aa57"><br><br><hr>
+<h2><strong>Estratégico</strong></h2>
+<br><br><hr>
+<h4>Declaraciones estratégicas (Misión, Visión)</h4><hr></hr>
+<fieldset style="text-align: start;">
+<legend><strong>1</strong>Las declaraciones estratégicas de su organización, ¿consideran alguna referencia a la protección de datos personales?</legend>
+<div>
+<input type="radio" id="r1" name="r1"  value="1">
+<label for="1" >Si</label><br></br>
+</div>
+<div>
+<input type="radio" id="r1" name="r1"  value="0">
+<label for="1" >No</label><br></br>
+</div>
+<br><br><hr>
+<h4>Objetivos Estratégicos</h4><hr></hr>
+<br><br><br>
+</fieldset>
+<fieldset style="text-align: start;">
+<legend><strong>2</strong>¿Existe algún objetivo estratégico relacionado con la protección de datos personales?</legend>
+<div>
+<input type="radio" id="r2" name="r2" onclick="rt('rt2');" value="1">
+<label for="2" >Si</label><br></br>
+</div>
+<div>
+<input type="radio" id="r2" name="r2" onclick="rf('rt2');" value="0">
+<label for="2" >No</label><br></br>
+</div>
+<div id="rt2" style="display:none"><fieldset style="text-align: start;">
+<legend><strong>2.1</strong>Dichos objetivos dicen relación con:</legend>
+<div>
+<input type="checkbox" id="r2.13" name="r2.13"   value="0.33"><label for="2.13" > Datos personales de los trabajadores </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r2.14" name="r2.14"   value="0.33"><label for="2.14" > Datos personales de los Proveedores </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r2.15" name="r2.15"   value="0.33"><label for="2.15" > Datos personales de los Clientes </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r2.16" name="r2.16"   value="0"><label for="2.16" > Ninguna de las anteriores </label><br></div>
+<br>
+</div>
+<br><br><hr>
+<h4>Metas e Indicadores</h4><hr></hr>
+<br><br><br>
+</fieldset>
+<fieldset style="text-align: start;">
+<legend><strong>3</strong>¿ Existen metas e indicadores que evalúen los resultados en materia de protección de datos personales?</legend>
+<div>
+<input type="radio" id="r3" name="r3" onclick="rt('rt3');" value="1">
+<label for="3" >Si</label><br></br>
+</div>
+<div>
+<input type="radio" id="r3" name="r3" onclick="rf('rt3');" value="0">
+<label for="3" >No</label><br></br>
+</div>
+<div id="rt3" style="display:none"><fieldset style="text-align: start;">
+<legend><strong>3.1</strong>Dichas metas e indicadores dicen relación con:</legend>
+<div>
+<input type="checkbox" id="r3.18" name="r3.18"   value="0.33"><label for="3.18" > Datos personales de los trabajadores </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r3.19" name="r3.19"   value="0.33"><label for="3.19" > Datos personales de los Proveedores </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r3.110" name="r3.110"   value="0.33"><label for="3.110" > Datos personales de los Clientes </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r3.111" name="r3.111"   value="0"><label for="3.111" > Ninguna de las anteriores </label><br></div>
+<br>
+<br><br><br>
+</fieldset>
+<fieldset style="text-align: start;">
+<legend><strong>3.2</strong>Existe un reporte a la alta dirección que incluya la evaluación de cumplimiento de indicadores y metas en protección de datos personales?</legend>
+<div>
+<input type="radio" id="r3.2" name="r3.2"  value="1">
+<label for="3.2" >Si</label><br></br>
+</div>
+<div>
+<input type="radio" id="r3.2" name="r3.2"  value="0">
+<label for="3.2" >No</label><br></br>
+</div>
+</div>
+<br><br><hr>
+<h4>Control de Gestión</h4><hr></hr>
+<fieldset style="text-align: start;">
+<legend><strong>4</strong>¿Se han tomado medidas relativas a mejorar el desempeño en la protección de datos personales?</legend>
+<div>
+<input type="radio" id="r4" name="r4"  value="1">
+<label for="4" >Si</label><br></br>
+</div>
+<div>
+<input type="radio" id="r4" name="r4"  value="0">
+<label for="4" >No</label><br></br>
+</div>
+<br><br><hr>
+<h4>Iniciativas Estratégicas</h4><hr></hr>
+<br><br><br>
+</fieldset>
+<fieldset style="text-align: start;">
+<legend><strong>5</strong>¿Existen inicitivas estratégicas relacionadas con la protección de los datos personales?</legend>
+<div>
+<input type="radio" id="r5" name="r5" onclick="rt('rt5');" value="1">
+<label for="5" >Si</label><br></br>
+</div>
+<div>
+<input type="radio" id="r5" name="r5" onclick="rf('rt5');" value="0">
+<label for="5" >No</label><br></br>
+</div>
+<div id="rt5" style="display:none"><fieldset style="text-align: start;">
+<legend><strong>5.1</strong>Dichas iniciativas estratégicas dicen relación con:</legend>
+<div>
+<input type="checkbox" id="r5.115" name="r5.115"   value="0.2"><label for="5.115" > Normas </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r5.116" name="r5.116"   value="0.2"><label for="5.116" > Procesos </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r5.117" name="r5.117"   value="0.2"><label for="5.117" > Tecnologías </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r5.118" name="r5.118"   value="0.2"><label for="5.118" > Recursos Humanos </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r5.119" name="r5.119"   value="0.2"><label for="5.119" > Transferencia de datos </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r5.120" name="r5.120"   value="0"><label for="5.120" > Ninguna de las anteriores </label><br></div>
+<br>
+</div>
+<br><br><hr>
+<h4>Gestión de Riesgos</h4><hr></hr>
+<br><br><br>
+</fieldset>
+<fieldset style="text-align: start;">
+<legend><strong>6</strong>En la matriz de riesgos institucional ¿Se identifican riesgos asociados a la vulnerabilidad de los datos personales?</legend>
+<div>
+<input type="radio" id="r6" name="r6" onclick="rt('rt6');" value="1">
+<label for="6" >Si</label><br></br>
+</div>
+<div>
+<input type="radio" id="r6" name="r6" onclick="rf('rt6');" value="0">
+<label for="6" >No</label><br></br>
+</div>
+<div id="rt6" style="display:none"><fieldset style="text-align: start;">
+<legend><strong>6.1</strong>Los riesgos identificados, dicen relación con:</legend>
+<div>
+<input type="checkbox" id="r6.122" name="r6.122"   value="0.33"><label for="6.122" > Datos personales de los trabajadores </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r6.123" name="r6.123"   value="0.33"><label for="6.123" > Datos personales de los Proveedores </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r6.124" name="r6.124"   value="0.33"><label for="6.124" > Datos personales de los Clientes </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r6.125" name="r6.125"   value="0"><label for="6.125" > Ninguna de las anteriores </label><br></div>
+<br>
+<br><br><br>
+</fieldset>
+<fieldset style="text-align: start;">
+<legend><strong>6.2</strong>¿Se implementan medidas de mitigación asociadas a los riesgos de mayor criticidad?</legend>
+<div>
+<input type="radio" id="r6.2" name="r6.2"  value="1">
+<label for="6.2" >Si</label><br></br>
+</div>
+<div>
+<input type="radio" id="r6.2" name="r6.2"  value="0">
+<label for="6.2" >No</label><br></br>
+</div>
+<fieldset style="text-align: start;">
+<legend><strong>6.3</strong>¿ Se establece un sistema de seguimiento para evaluar el cumplimiento de las medidas de mitigación?</legend>
+<div>
+<input type="radio" id="r6.3" name="r6.3"  value="1">
+<label for="6.3" >Si</label><br></br>
+</div>
+<div>
+<input type="radio" id="r6.3" name="r6.3"  value="0">
+<label for="6.3" >No</label><br></br>
+</div>
+<br><br><br>
+</fieldset>
+<fieldset style="text-align: start;">
+<legend><strong>6.4</strong>¿Se considera el análisis de riesgos en los procesos de planificación estratégica de la organización?</legend>
+<div>
+<input type="radio" id="r6.4" name="r6.4"  value="1">
+<label for="6.4" >Si</label><br></br>
+</div>
+<div>
+<input type="radio" id="r6.4" name="r6.4"  value="0">
+<label for="6.4" >No</label><br></br>
+</div>
+</div>
+<br><br><hr>
+<h2><strong>Normativo</strong></h2>
+<br><br><hr>
+<h4>Políticas de privacidad</h4><hr></hr>
+<fieldset style="text-align: start;">
+<legend><strong>7</strong>¿Existe una política de privacidad en la cual se norma el tratamiento y protección de datos personales en su organización?</legend>
+<div>
+<input type="radio" id="r7" name="r7"  value="1">
+<label for="7" >Si</label><br></br>
+</div>
+<div>
+<input type="radio" id="r7" name="r7"  value="0">
+<label for="7" >No</label><br></br>
+</div>
+<br><br><br>
+</fieldset>
+<fieldset style="text-align: start;">
+<legend><strong>8</strong>¿La política de privacidad contiene principios o normas para la utilización de los datos?</legend>
+<div>
+<input type="radio" id="r8" name="r8" onclick="rt('rt8');" value="1">
+<label for="8" >Si</label><br></br>
+</div>
+<div>
+<input type="radio" id="r8" name="r8" onclick="rf('rt8');" value="0">
+<label for="8" >No</label><br></br>
+</div>
+<div id="rt8" style="display:none"><fieldset style="text-align: start;">
+<legend><strong>8.1</strong>La política de privacidad contempla los siguientes normas para la utilización de los datos personales, de acuerdo a la ley chilena de protección de datos personales:</legend>
+<div>
+<input type="checkbox" id="r8.131" name="r8.131"   value="0.25"><label for="8.131" > Licitud del tratamiento </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r8.132" name="r8.132"   value="0.25"><label for="8.132" > Limitación plazo de conservación </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r8.133" name="r8.133"   value="0.25"><label for="8.133" > Exactitud </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r8.134" name="r8.134"   value="0.25"><label for="8.134" > Finalidad </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r8.135" name="r8.135"   value="0"><label for="8.135" > Ninguna de las anteriores </label><br></div>
+<br>
+<br><br><br>
+</fieldset>
+</div>
+<fieldset style="text-align: start;">
+<legend><strong>9</strong>La política de privacidad contempla principios de acuerdo al Reglamento General de Protección de Datos Personales Europeo (como buena práctica):</legend>
+<div>
+<input type="radio" id="r9" name="r9" onclick="rt('rt9');" value="1">
+<label for="9" >Si</label><br></br>
+</div>
+<div>
+<input type="radio" id="r9" name="r9" onclick="rf('rt9');" value="0">
+<label for="9" >No</label><br></br>
+</div>
+<div id="rt9" style="display:none"><fieldset style="text-align: start;">
+<legend><strong>9.1</strong>La política de privacidad contempla los siguientes principios, de acuerdo al Reglamento General de Protección de Datos Personales Europeo (como buena práctica):</legend>
+<div>
+<input type="checkbox" id="r9.137" name="r9.137"   value="0.15"><label for="9.137" > Licitud, lealtad y transparencia </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r9.138" name="r9.138"   value="0.15"><label for="9.138" > Limitación de la finalidad </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r9.139" name="r9.139"   value="0.15"><label for="9.139" > Minimización de datos </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r9.140" name="r9.140"   value="0.15"><label for="9.140" > Exactitud </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r9.141" name="r9.141"   value="0.15"><label for="9.141" > Limitación plazo de conservación </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r9.142" name="r9.142"   value="0.15"><label for="9.142" > Integridad y confidencialidad </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r9.143" name="r9.143"   value="0.15"><label for="9.143" > Responsabilidad proactiva </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r9.144" name="r9.144"   value="0"><label for="9.144" > Ninguna de las anteriores </label><br></div>
+<br>
+<br><br><br>
+</fieldset>
+</div>
+<fieldset style="text-align: start;">
+<legend><strong>10</strong>La política de privacidad contempla derechos para los titulares de los datos personales?</legend>
+<div>
+<input type="radio" id="r10" name="r10" onclick="rt('rt10');" value="1">
+<label for="10" >Si</label><br></br>
+</div>
+<div>
+<input type="radio" id="r10" name="r10" onclick="rf('rt10');" value="0">
+<label for="10" >No</label><br></br>
+</div>
+<div id="rt10" style="display:none"><fieldset style="text-align: start;">
+<legend><strong>10.1</strong>La política de privacidad contempla los siguientes derechos de los titulares, de acuerdo a la ley chilena de protección de datos personales:</legend>
+<div>
+<input type="checkbox" id="r10.146" name="r10.146"   value="0.33"><label for="10.146" > Derecho de información </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r10.147" name="r10.147"   value="0.33"><label for="10.147" > Derecho de modificación </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r10.148" name="r10.148"   value="0.33"><label for="10.148" > Derecho de eliminación </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r10.149" name="r10.149"   value="0"><label for="10.149" > Ninguna de las anteriores </label><br></div>
+<br>
+<br><br><br>
+</fieldset>
+</div>
+<fieldset style="text-align: start;">
+<legend><strong>11</strong>La política de privacidad contempla derechos de los titulares, de acuerdo al Reglamento General de Protección de Datos Personales Europeo (como buena práctica):</legend>
+<div>
+<input type="radio" id="r11" name="r11" onclick="rt('rt11');" value="1">
+<label for="11" >Si</label><br></br>
+</div>
+<div>
+<input type="radio" id="r11" name="r11" onclick="rf('rt11');" value="0">
+<label for="11" >No</label><br></br>
+</div>
+<div id="rt11" style="display:none"><fieldset style="text-align: start;">
+<legend><strong>11.1</strong>La política de privacidad contempla los siguientes derechos de los titulares, de acuerdo al Reglamento General de Protección de Datos Personales Europeo (como buena práctica):</legend>
+<div>
+<input type="checkbox" id="r11.151" name="r11.151"   value="0.2"><label for="11.151" > Derecho de acceso </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r11.152" name="r11.152"   value="0.2"><label for="11.152" > Derecho de rectificación </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r11.153" name="r11.153"   value="0.2"><label for="11.153" > Derecho de supresión o derecho al olvido </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r11.154" name="r11.154"   value="0.2"><label for="11.154" > Derecho a la portabilidad de los datos </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r11.155" name="r11.155"   value="0.2"><label for="11.155" > Derecho de oposición </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r11.56" name="r11.56"   value="0"><label for="11.56" > Ninguna de las anteriores </label><br></div>
+<br>
+<br><br><br>
+</fieldset>
+</div>
+<fieldset style="text-align: start;">
+<legend><strong>12</strong>La política de privacidad contempla definiciones para su debida interpretación y aplicación?</legend>
+<div>
+<input type="radio" id="r12" name="r12" onclick="rt('rt12');" value="1">
+<label for="12" >Si</label><br></br>
+</div>
+<div>
+<input type="radio" id="r12" name="r12" onclick="rf('rt12');" value="0">
+<label for="12" >No</label><br></br>
+</div>
+<div id="rt12" style="display:none"><fieldset style="text-align: start;">
+<legend><strong>12.1</strong>La política de privacidad define los siguientes conceptos:</legend>
+<div>
+<input type="checkbox" id="r12.158" name="r12.158"   value="0.1"><label for="12.158" > dato personal </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r12.159" name="r12.159"   value="0.1"><label for="12.159" > Tratamiento </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r12.160" name="r12.160"   value="0.1"><label for="12.160" > Limitación del tratamiento </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r12.161" name="r12.161"   value="0.1"><label for="12.161" > Elaboración de perfiles </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r12.162" name="r12.162"   value="0.1"><label for="12.162" > Seudonimización (0,1) </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r12.163" name="r12.163"   value="0.05"><label for="12.163" > Base de datos (0,05) </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r12.164" name="r12.164"   value="0.1"><label for="12.164" > Responsable del tratamiento (0,1) </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r12.165" name="r12.165"   value="0.1"><label for="12.165" > Encargado del tratamiento (0,1) </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r12.166" name="r12.166"   value="0.05"><label for="12.166" > Consentimiento del interesado (0,1) </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r12.167" name="r12.167"   value="0.05"><label for="12.167" > Seguridad de los datos (0,05) </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r12.168" name="r12.168"   value="0.05"><label for="12.168" > datos genéticos (0,05) </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r12.169" name="r12.169"   value="0.05"><label for="12.169" > datos biométricos (0,05) </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r12.170" name="r12.170"   value="0.05"><label for="12.170" > datos de salud (0,05) </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r12.171" name="r12.171"   value="0"><label for="12.171" > No contiene definiciones </label><br></div>
+<br>
+<br><br><br>
+</fieldset>
+</div>
+<fieldset style="text-align: start;">
+<legend><strong>13</strong>¿La política de privacidad contempla normas sobre categorias especiales de datos?</legend>
+<div>
+<input type="radio" id="r13" name="r13" onclick="rt('rt13');" value="1">
+<label for="13" >Si</label><br></br>
+</div>
+<div>
+<input type="radio" id="r13" name="r13" onclick="rf('rt13');" value="0">
+<label for="13" >No</label><br></br>
+</div>
+<div id="rt13" style="display:none"><fieldset style="text-align: start;">
+<legend><strong>13.1</strong>Las normas sobre categorias especiales de datos, se refieren a:</legend>
+<div>
+<input type="checkbox" id="r13.173" name="r13.173"   value="0.15"><label for="13.173" > Origen étnico o racial </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r13.174" name="r13.174"   value="0.15"><label for="13.174" > Opiniones políticas </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r13.175" name="r13.175"   value="0.15"><label for="13.175" > Convicciones religiosas o filosóficas </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r13.176" name="r13.176"   value="0.15"><label for="13.176" > Afiliación sindical </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r13.177" name="r13.177"   value="0.15"><label for="13.177" > Datos genéticos o de salud </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r13.178" name="r13.178"   value="0.15"><label for="13.178" > Datos biométricos </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r13.179" name="r13.179"   value="0.15"><label for="13.179" > Datos relativos a la vida u orientaciones sexuales </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r13.180" name="r13.180"   value="0"><label for="13.180" > Ninguna de las anteriores </label><br></div>
+<br>
+<br><br><br>
+</fieldset>
+</div>
+<fieldset style="text-align: start;">
+<legend><strong>14</strong>¿La política de privacidad contempla normas que expliciten las obligaciones de la organización respecto a la protección de datos?</legend>
+<div>
+<input type="radio" id="r14" name="r14" onclick="rt('rt14');" value="1">
+<label for="14" >Si</label><br></br>
+</div>
+<div>
+<input type="radio" id="r14" name="r14" onclick="rf('rt14');" value="0">
+<label for="14" >No</label><br></br>
+</div>
+<div id="rt14" style="display:none"><fieldset style="text-align: start;">
+<legend><strong>14.1</strong>Las normas que explicitan las obligaciones se refieren a:</legend>
+<div>
+<input type="checkbox" id="r14.182" name="r14.182"   value="0.2"><label for="14.182" > a) La utilización de la información </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r14.183" name="r14.183"   value="0.2"><label for="14.183" > Transferencia y cesión de la información </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r14.184" name="r14.184"   value="0.2"><label for="14.184" > Almacenamiento y custodia </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r14.185" name="r14.185"   value="0.2"><label for="14.185" > Deberes generales de seguridad </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r14.186" name="r14.186"   value="0.2"><label for="14.186" > Adoptar las medidas técnicas y organizativas para dar cumplimiento a los principios y derechos establecidos en la política </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r14.187" name="r14.187"   value="0"><label for="14.187" > Ninguna de las anteriores </label><br></div>
+<br>
+<br><br><br>
+</fieldset>
+</div>
+<fieldset style="text-align: start;">
+<legend><strong>15</strong>¿La política de privacidad contemplala existencia de un delegado o encargado del tratamiento de la protección de datos?</legend>
+<div>
+<input type="radio" id="r15" name="r15" onclick="rt('rt15');" value="1">
+<label for="15" >Si</label><br></br>
+</div>
+<div>
+<input type="radio" id="r15" name="r15" onclick="rf('rt15');" value="0">
+<label for="15" >No</label><br></br>
+</div>
+<div id="rt15" style="display:none"><fieldset style="text-align: start;">
+<legend><strong>15.1</strong>Las principales funciones del delegado o encargado del tratamiento de datos se refieren a:</legend>
+<div>
+<input type="checkbox" id="r15.189" name="r15.189"   value="0.33"><label for="15.189" > Supervigilancia de los procesos de tratamiento </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r15.190" name="r15.190"   value="0.33"><label for="15.190" > Administración de los canales de comunicación con los titulares de los datos </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r15.191" name="r15.191"   value="0.33"><label for="15.191" > La fiscalización interna del cumplimiento de la política </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r15.192" name="r15.192"   value="0"><label for="15.192" > Ninguna de las anterioes </label><br></div>
+<br>
+<br><br><br>
+</fieldset>
+</div>
+<fieldset style="text-align: start;">
+<legend><strong>16</strong>¿La política de privacidad contempla la existencia de un canal de contacto para que los titulares puedan ejercer sus derechos?</legend>
+<div>
+<input type="radio" id="r16" name="r16"  value="1">
+<label for="16" >Si</label><br></br>
+</div>
+<div>
+<input type="radio" id="r16" name="r16"  value="0">
+<label for="16" >No</label><br></br>
+</div>
+<fieldset style="text-align: start;">
+<legend><strong>17</strong>¿La política de privacidad contempla la jurisdicción y el marco legal aplicable?</legend>
+<div>
+<input type="radio" id="r17" name="r17"  value="1">
+<label for="17" >Si</label><br></br>
+</div>
+<div>
+<input type="radio" id="r17" name="r17"  value="0">
+<label for="17" >No</label><br></br>
+</div>
+<br><br><br>
+</fieldset>
+<fieldset style="text-align: start;">
+<legend><strong>18</strong>¿La política de privacidad contempla la declaración del objeto y alcance del tratamiento de datos que realiza la organización?</legend>
+<div>
+<input type="radio" id="r18" name="r18"  value="1">
+<label for="18" >Si</label><br></br>
+</div>
+<div>
+<input type="radio" id="r18" name="r18"  value="0">
+<label for="18" >No</label><br></br>
+</div>
+<fieldset style="text-align: start;">
+<legend><strong>19</strong>La política de privacidad contempla los siguientes canales de difusión:</legend>
+<div>
+<input type="checkbox" id="r115" name="r115"   value="0.5"><label for="115" > Internos </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r116" name="r116"   value="0.5"><label for="116" > Externos </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r117" name="r117"   value="0"><label for="117" > Ninguna de las anterioes </label><br></div>
+<br>
+<br><br><br>
+</fieldset>
+<fieldset style="text-align: start;">
+<legend><strong>20</strong>La política de privacidad contempla deberes y responsabilidades para el personal que participa en el tratamiento de los datos personales?</legend>
+<div>
+<input type="radio" id="r20" name="r20"  value="1">
+<label for="20" >Si</label><br></br>
+</div>
+<div>
+<input type="radio" id="r20" name="r20"  value="0">
+<label for="20" >No</label><br></br>
+</div>
+<fieldset style="text-align: start;">
+<legend><strong>21</strong>La política de privacidad contempla mecanismos de sanciones para resguardar su cumplimiento?</legend>
+<div>
+<input type="radio" id="r21" name="r21"  value="1">
+<label for="21" >Si</label><br></br>
+</div>
+<div>
+<input type="radio" id="r21" name="r21"  value="0">
+<label for="21" >No</label><br></br>
+</div>
+<br><br><hr>
+<h4>Reglamentos y/o protocolos</h4><hr></hr>
+<br><br><br>
+</fieldset>
+<fieldset style="text-align: start;">
+<legend><strong>22</strong>¿La organización contempla procedimientos y/o protocolos que regulen el ejercicio de los titulares de los datos?</legend>
+<div>
+<input type="radio" id="r22" name="r22" onclick="rt('rt22');" value="1">
+<label for="22" >Si</label><br></br>
+</div>
+<div>
+<input type="radio" id="r22" name="r22" onclick="rf('rt22');" value="0">
+<label for="22" >No</label><br></br>
+</div>
+<div id="rt22" style="display:none"><fieldset style="text-align: start;">
+<legend><strong>22.1</strong>Estos protocolos y/o procedimientos internos regulan las siguientes materias:</legend>
+<div>
+<input type="checkbox" id="r22.1102" name="r22.1102"   value="0.2"><label for="22.1102" > La obtención del consentimiento </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r22.1103" name="r22.1103"   value="0.2"><label for="22.1103" > La entrega de información al titular de los datos respecto del propósito del tratamiento </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r22.1104" name="r22.1104"   value="0.2"><label for="22.1104" > La eliminación o cancelación de los datos </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r22.1105" name="r22.1105"   value="0.2"><label for="22.1105" > La modificación de los datos </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r22.1106" name="r22.1106"   value="0.2"><label for="22.1106" > El bloqueo de los datos </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r22.1107" name="r22.1107"   value="null"><label for="22.1107" > Ninguna de las anteriores </label><br></div>
+<br>
+<br><br><br>
+</fieldset>
+</div>
+<fieldset style="text-align: start;">
+<legend><strong>23</strong>¿Se contemplan protocolos y/o procedimientos, para que desde el diseño de las bases de datos, se adopten todas las medidas organizativas para el resguardo de los requisitos legales,  normativos y los establecidos en la presente política?</legend>
+<div>
+<input type="radio" id="r23" name="r23"  value="1">
+<label for="23" >Si</label><br></br>
+</div>
+<div>
+<input type="radio" id="r23" name="r23"  value="0">
+<label for="23" >No</label><br></br>
+</div>
+<br><br><hr>
+<h4>Clausulas de tratamiento de datos</h4><hr></hr>
+<fieldset style="text-align: start;">
+<legend><strong>24</strong>¿La organización cuenta con clausulas tipo de tratamiento datos personales para resguardar las disposiciones legales,  normativos y los establecidos en la presente política?</legend>
+<div>
+<input type="radio" id="r24" name="r24" onclick="rt('rt24');" value="1">
+<label for="24" >Si</label><br></br>
+</div>
+<div>
+<input type="radio" id="r24" name="r24" onclick="rf('rt24');" value="0">
+<label for="24" >No</label><br></br>
+</div>
+<br><br><br>
+</fieldset>
+<div id="rt24" style="display:none"><fieldset style="text-align: start;">
+<legend><strong>24.1</strong>Las clausulas tipo son aplicables a:</legend>
+<div>
+<input type="checkbox" id="r24.1110" name="r24.1110"   value="0.33"><label for="24.1110" > Contratos de trabajo </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r24.1111" name="r24.1111"   value="0.33"><label for="24.1111" > Contratos con proveedores </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r24.1112" name="r24.1112"   value="0.33"><label for="24.1112" > Contratos con clientes </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r24.1113" name="r24.1113"   value="0"><label for="24.1113" > Ninguna de las anteriores </label><br></div>
+<br>
+</div>
+<br><br><hr>
+<h4>Transferencia y cesiones</h4><hr></hr>
+<fieldset style="text-align: start;">
+<legend><strong>25</strong>¿La organización efectúa transferencia o cesión de datos a terceros?</legend>
+<div>
+<input type="radio" id="r25" name="r25"  value="1">
+<label for="25" >Si</label><br></br>
+</div>
+<div>
+<input type="radio" id="r25" name="r25"  value="0">
+<label for="25" >No</label><br></br>
+</div>
+<br><br><br>
+</fieldset>
+<fieldset style="text-align: start;">
+<legend><strong>26</strong>Para realizar estas transferencias o cesión de datos, existen protocolos y/o procedimientos para resguardar las disposiciones legales,  normativos y los establecidos en la presente política?</legend>
+<div>
+<input type="radio" id="r26" name="r26"  value="1">
+<label for="26" >Si</label><br></br>
+</div>
+<div>
+<input type="radio" id="r26" name="r26"  value="0">
+<label for="26" >No</label><br></br>
+</div>
+<br><br><hr>
+<h4>Normativa específica</h4><hr></hr>
+<fieldset style="text-align: start;">
+<legend><strong>27</strong>Su organización, por su naturaleza u objeto, está sujeta a un régimen normativo especial que regule el uso de datos personales?</legend>
+<div>
+<input type="radio" id="r27" name="r27"  value="1">
+<label for="27" >Si</label><br></br>
+</div>
+<div>
+<input type="radio" id="r27" name="r27"  value="0">
+<label for="27" >No</label><br></br>
+</div>
+</fieldset>
+
+    </div>
+    
+      <footer class="footer">
+        <button id="btntest" class="btn btn-lg btn-primary btn-block" type="submit" value="Submit">Evaluar</button>
+        <p>&copy; Cdoenlinea 2015</p>
+      </footer>
+ 
+    </div>
+</form>
+    <script type="text/javascript">
+        function rt(valor){
+           
+           var regi = document.getElementById(valor);
+           regi.style.display = 'block';
+           
+        }
+        function rf(valor){
+           
+           var regi = document.getElementById(valor);
+           regi.style.display = 'none';
+           
+        }
+       
+       function r1(){
+           var divi = document.getElementById('r1');
+           var regi = document.getElementById('sr1');
+           regi.style.visibility = 'visible';
+           
+        }
+        function tomaTest(){
+           var divi = document.getElementById('test');
+           var regi = document.getElementById('registro');
+           divi.style.visibility = 'visible';
+         //  regi.style.visibility = 'hidden';
+        }
+        $(document).ready(function() {
+            $('#btnSignUp').click(function() {
+         
+                $.ajax({
+                    url: 'signUp',
+                    data: $('form').serialize(),
+                    type: 'POST',
+                    success: function(response) {
+                        var data = response;
+
+                        var parsed = JSON.parse(data);
+
+                        document.getElementById('base').innerHTML = parsed.html;
+                        console.log(response);
+                    },
+                    error: function(error) {
+                        console.log(error);
+                    }
+                });
+            });
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Registro y Test</title>
+ 
+    
+    <link href="http://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+ 
+    <link href="https://v4-alpha.getbootstrap.com/examples/narrow-jumbotron/narrow-jumbotron.css" rel="stylesheet">
+    <link href="../static/signup.css" rel="stylesheet">
+    <script src='../static/js/jquery-3.6.0.min.js'></script>
+    
+  </head>
+ 
+  <body>
+ 
+    <div class="container">
+      <div class="header">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" ><a href="main">Home</a></li>
+            <li role="presentation"><a href="/SignIn">Sign In</a></li>
+            <li role="presentation" class="active"><a href="/SignUp">Sign Up</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">Evaluar Cumplimiento Seguridad Datos Personales</h3>
+      </div>
+ 
+      <div id='registro' class="jumbotron jumbotron-fluid">
+       <div class="container-fluid">
+        <h1>Registro</h1>
+        <form class="login-form" method="POST" action="http://localhost:8089/aca/asocia">
+        <label for="nombre" class="sr-only">Nombre y Apellido</label>
+        <input type="name" name="nombre" id="nombre" class="form-control" placeholder="Jorge Ramones" required autofocus>
+        <label for="email" class="sr-only">Direccion Email</label>
+        <input type="email" name="email" id="email" class="form-control" placeholder="Direccion Email" required autofocus>
+        <label for="empresa" class="sr-only">Empresa</label>
+        <input type="name" name="empresa" id="empresa" class="form-control" placeholder="Carozzi" required>
+        <label for="telefono" class="sr-only">Telefono</label>
+        <input type="name" name="telefono" id="telefono" class="form-control" placeholder="+5699881341" required>
+        <label for="sector" class="sr-only">Sector </label>
+        <select id="sector" class="form-control" name="sector" required>
+            <option value="Banca y Finanzas">Banca y Finanzas</option>
+            <option value="Seguros">Seguros</option>
+            <option value="Retail">Retail</option>
+            <option value="Servicios">Servicios</option>
+        </select>
+        <br>
+        <!-- button id="btnSignUp" class="btn btn-lg btn-primary btn-block" type="button">Test</button   -->
+        <button id="btntest" class="btn btn-lg btn-primary btn-block"  type="submit">Test</button>
+        <div id="base"></div>
+      </form>
+      </div>
+ 
+    </div>
+    <div id="test" style="visibility:hidden" class="jumbotron jumbotron-fluid">
+        <div class="container-fluid">
+         <h1>Test de Evaluacion</h1> 
+         <br>
+         <br>
+         <hr>
+         <h2><strong>Ambito Estrategia</strong></h2>
+         <h4>Objetivos Estratégicos</h4>
+         <hr>
+         <fieldset style="text-align: start;">
+         <legend>1. Las declaraciones estratégicas de su organización, ¿consideran alguna referencia a la protección de datos personales?</leyend>
+           <div >
+               <input type="radio" id='r1' name='r1'  onclick="r1();" value='ok'>
+               <label for='r1' >Si</label><br>
+          
+            <input type="radio" id='r2' name='r2' value='no'>
+            <label for='r2' >No</label><br>
+           </div>
+         </fieldset>
+         <div id='sr1' style="visibility:hidden">
+            <fieldset style="text-align: start;">
+               <legend>2. ¿Existe algún objetivo estratégico relacionado con la protección de datos personales?</legend>
+               <div >
+                <input type="radio" id='2r1' name='2r1'  onclick="r21();" value='ok'>
+                <label for='2r1' >Si</label><br>
+               </div>
+               <div>
+                <input type="radio" id='2r2' name='2r2' value='no'>
+                <label for='2r2' >No</label><br>
+               </div>
+            </fieldset>
+            <div id='2sr1' style="visibility:hidden">
+                <fieldset style="text-align: start;">
+                    <legend>2.1 Dichos objetivos dicen relación con:</legend>
+                    <div >
+                     <input type="checkbox" id='21r1' name='21r1'   value='33'>
+                     <label for='2r1' >a) Datos personales de los trabajadores </label><br>
+                    </div>
+                    <div>
+                     <input type="checkbox" id='21r2' name='21r2' value='33'>
+                     <label for='2r2' >b) Datos personales de los Proveedores</label><br>
+                    </div>
+                    <div>
+                        <input type="checkbox" id='21r2' name='21r2' value='33'>
+                        <label for='2r2' >c) Datos personales de los Clientes </label><br>
+                    </div>
+                    <div>
+                        <input type="checkbox" id='21r2' name='21r2' value='0'>
+                        <label for='2r2' >d) Ninguna de las anteriores </label><br>
+                    </div>
+                 </fieldset>
+            </div>
+            <fieldset style="text-align: start;">
+                <br>
+                <hr>
+                <h4>Metas e indicadores</h4>
+                <hr>
+                <legend>3. ¿ Existen metas e indicadores que evalúen los resultados en materia de protección de datos personales? </leyend>
+                  <div >
+                      <input type="radio" id='3r1' name='3r1'  onclick="r33();" value='ok'>
+                      <label for='3r1' >Si</label><br>
+                 
+                   <input type="radio" id='3r2' name='3r2' value='no'>
+                   <label for='3r1' >No</label><br>
+                  </div>
+            </fieldset>
+            <div id='3sr1' style="visibility:hidden">
+                <fieldset style="text-align: start;">
+                    <legend>3.1 Dichas metas e indicadores dicen relación con: </legend>
+                    <div >
+                     <input type="checkbox" id='21r1' name='21r1'   value='33'>
+                     <label for='2r1' >a) Datos personales de los trabajadores </label><br>
+                    </div>
+                    <div>
+                     <input type="checkbox" id='21r2' name='21r2' value='33'>
+                     <label for='2r2' >b) Datos personales de los Proveedores</label><br>
+                    </div>
+                    <div>
+                        <input type="checkbox" id='21r2' name='21r2' value='33'>
+                        <label for='2r2' >c) Datos personales de los Clientes </label><br>
+                    </div>
+                    <div>
+                        <input type="checkbox" id='21r2' name='21r2' value='0'>
+                        <label for='2r2' >d) Ninguna de las anteriores </label><br>
+                    </div>
+                 </fieldset>
+                 <fieldset style="text-align: start;">
+                  
+                    <legend>3.2 Existe un reporte a la alta dirección que incluya la evaluación de cumplimiento de indicadores y metas en protección de datos personales?</leyend>
+                      <div >
+                          <input type="radio" id='3r1' name='3r1'   value='ok'>
+                          <label for='3r1' >Si</label><br>
+                     
+                       <input type="radio" id='3r2' name='3r2' value='no'>
+                       <label for='3r1' >No</label><br>
+                      </div>
+                </fieldset>
+            </div>
+            <fieldset style="text-align: start;">
+                <br>
+                <hr>
+                <h4>Control de Gestión</h4>
+                <hr>  
+                <legend>4. ¿Se han tomado medidas relativas a mejorar el desempeño en la protección de datos personales?</leyend>
+                  <div >
+                      <input type="radio" id='3r1' name='3r1'   value='ok'>
+                      <label for='3r1' >Si</label><br>
+                 
+                   <input type="radio" id='3r2' name='3r2' value='no'>
+                   <label for='3r1' >No</label><br>
+                  </div>
+            </fieldset>
+            <fieldset style="text-align: start;">
+                <br>
+                <hr>
+                <h4>Iniciativas Estratégicas</h4>
+                <hr>  
+                <legend>5. ¿Existen inicitivas estratégicas relacionadas con la protección de los datos personales?</leyend>
+                  <div >
+                      <input type="radio" id='3r1' name='3r1'  onclick="r50();"  value='ok'>
+                      <label for='3r1' >Si</label><br>
+                 
+                   <input type="radio" id='3r2' name='3r2' value='no'>
+                   <label for='3r1' >No</label><br>
+                  </div>
+            </fieldset>
+            <div id='5sr1' style="visibility:hidden">
+                <fieldset style="text-align: start;">
+                    <legend>5.1 Dichas iniciativas estratégicas dicen relación con: </legend>
+                    <div >
+                     <input type="checkbox" id='21r1' name='21r1'   value='33'>
+                     <label for='2r1' >a) Normas</label><br>
+                    </div>
+                    <div>
+                     <input type="checkbox" id='21r2' name='21r2' value='33'>
+                     <label for='2r2' >b) Procesos</label><br>
+                    </div>
+                    <div>
+                        <input type="checkbox" id='21r2' name='21r2' value='33'>
+                        <label for='2r2' >c) Tecnologías </label><br>
+                    </div>
+                    <div>
+                        <input type="checkbox" id='21r2' name='21r2' value='0'>
+                        <label for='2r2' >d) Recursos Humanos</label><br>
+                    </div>
+                    <div>
+                        <input type="checkbox" id='21r2' name='21r2' value='0'>
+                        <label for='2r2' >e) Transferencia de datos</label><br>
+                    </div>
+                    <div>
+                        <input type="checkbox" id='21r2' name='21r2' value='0'>
+                        <label for='2r2' >f) Ninguna de las anteriores</label><br>
+                    </div>
+                 </fieldset>
+            </div>
+            <fieldset style="text-align: start;">
+                <br>
+                <hr>
+                <h4>Gestión de Riesgos</h4>
+                <hr>  
+                <legend>6. En la matriz de riesgos institucional ¿Se identifican riesgos asociados a la vulnerabilidad de los datos personales?</leyend>
+                  <div >
+                      <input type="radio" id='3r1' name='3r1'  onclick="r60();"  value='ok'>
+                      <label for='3r1' >Si</label><br>
+                 
+                   <input type="radio" id='3r2' name='3r2' value='no'>
+                   <label for='3r1' >No</label><br>
+                  </div>
+            </fieldset>
+            <div id='6sr1' style="visibility:hidden">
+                <fieldset style="text-align: start;">
+                    <legend>6.1 Los riesgos identificados, dicen relación con: </legend>
+                    <div >
+                     <input type="checkbox" id='21r1' name='21r1'   value='33'>
+                     <label for='2r1' >a) Datos personales de los trabajadores </label><br>
+                    </div>
+                    <div>
+                     <input type="checkbox" id='21r2' name='21r2' value='33'>
+                     <label for='2r2' >b) Datos personales de los Proveedores</label><br>
+                    </div>
+                    <div>
+                        <input type="checkbox" id='21r2' name='21r2' value='33'>
+                        <label for='2r2' >c) Datos personales de los Clientes </label><br>
+                    </div>
+                    <div>
+                        <input type="checkbox" id='21r2' name='21r2' value='0'>
+                        <label for='2r2' >d) Ninguna de las anteriores </label><br>
+                    </div>
+                 </fieldset>
+                 <fieldset style="text-align: start;"> 
+                    <legend>6.2 ¿Se implementan medidas de mitigación asociadas a los riesgos de mayor criticidad? </leyend>
+                      <div >
+                          <input type="radio" id='3r1' name='3r1'   value='ok'>
+                          <label for='3r1' >Si</label><br>
+                     
+                       <input type="radio" id='3r2' name='3r2' value='no'>
+                       <label for='3r1' >No</label><br>
+                      </div>
+                </fieldset>
+                <fieldset style="text-align: start;"> 
+                    <legend>6.3 ¿ Se establece un sistema de seguimiento para evaluar el cumplimiento de las medidas de mitigación? </leyend>
+                      <div >
+                          <input type="radio" id='3r1' name='3r1'   value='ok'>
+                          <label for='3r1' >Si</label><br>
+                     
+                       <input type="radio" id='3r2' name='3r2' value='no'>
+                       <label for='3r1' >No</label><br>
+                      </div>
+                </fieldset>
+                <fieldset style="text-align: start;"> 
+                    <legend>6.4 ¿Se considera el análisis de riesgos en los procesos de planificación estratégica de la organización? </leyend>
+                      <div >
+                          <input type="radio" id='3r1' name='3r1'   value='ok'>
+                          <label for='3r1' >Si</label><br>
+                     
+                       <input type="radio" id='3r2' name='3r2' value='no'>
+                       <label for='3r1' >No</label><br>
+                      </div>
+                </fieldset>
+         </div>
+        </div>
+    </div>
+      <footer class="footer">
+        <button id="btntest" class="btn btn-lg btn-primary btn-block" onclick="location.href='http://localhost:5000/cumple'" type="button">Evaluar</button>
+        <p>&copy; Tuwe 2015</p>
+      </footer>
+ 
+    </div>
+
+    <script type="text/javascript">
+    function r60(){
+           
+           var regi = document.getElementById('6sr1');
+           regi.style.visibility = 'visible';
+           
+        }
+        function r50(){
+           
+           var regi = document.getElementById('5sr1');
+           regi.style.visibility = 'visible';
+           
+        }
+        function r33(){
+           
+           var regi = document.getElementById('3sr1');
+           regi.style.visibility = 'visible';
+           
+        }
+        function r21(){
+           
+           var regi = document.getElementById('2sr1');
+           regi.style.visibility = 'visible';
+           
+        }
+       function r1(){
+           var divi = document.getElementById('r1');
+           var regi = document.getElementById('sr1');
+           regi.style.visibility = 'visible';
+           
+        }
+        function tomaTest(){
+           var divi = document.getElementById('test');
+           var regi = document.getElementById('registro');
+           divi.style.visibility = 'visible';
+         //  regi.style.visibility = 'hidden';
+        }
+        $(document).ready(function() {
+            $('#btnSignUp').click(function() {
+         
+                $.ajax({
+                    url: '/signUp',
+                    data: $('form').serialize(),
+                    type: 'POST',
+                    success: function(response) {
+                        var data = response;
+
+                        var parsed = JSON.parse(data);
+
+                        document.getElementById('base').innerHTML = parsed.html;
+                        console.log(response);
+                    },
+                    error: function(error) {
+                        console.log(error);
+                    }
+                });
+            });
+        });
+    </script>
+  </body>
+</html>

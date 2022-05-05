@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <%- include('partials/head'); -%> 
+
+ 
+    </head>
+    <body>
+        <%- include('partials/menu'); -%>
+        <div class="boies">
+        
+        
+            <div class="login-page">
+              <div class="form">
+                   <button   onClick="location.href='/list/getUsuarios'">Buscar RUT</button>
+                <form class="login-form" method="POST" action="/list/procesa">
+                
+                  <input type="text" name="destinatario" id="destinatario" 
+                         placeholder="Rut" value='<%- destinatario -%>'/>
+                   
+                  <input type="text" name="remitente" id="remitente"   value='<%- remite -%>'/>
+                   <input type="text" name="asunto" id="asunto" placeholder="Asunto" value='<%- asunto -%>'/>    
+                  <p><textarea cols="36" rows="5" name="body" id="body">
+                    </textarea></p>
+                  <button>Enviar</button>
+                  
+                </form>
+              </div>
+            </div>
+        </div>
+    </body>
+    
+<%- include('partials/script'); -%>
+    <style>
+   
+    </style>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <%- include('partials/head'); -%> 
+</head>
+<body>
+<%- include('partials/menu'); -%>
+
+<div class="container-fluid bg-3 text-center">  
+<table style="width:100%">
+    <tr>
+      <td width="10%">
+          <div class="row">
+            <div class="col">
+             <div class="vmenu">
+               <div class="row">
+                 <div class="col-sm-8"> 
+                   <a id="abrir" class="abrir-cerrar"  href="/list/users" >
+                      MANTENER USUARIOS
+                   </a>
+                 </div>
+               </div>
+                 <div class="row">
+                 <div class="col-sm-8"> 
+                   <hr>
+                 </div>
+               </div>
+               <div class="row">
+                 <div class="col-sm-8">
+                   <a id="cerrar" class="abrir-cerrar" href="/listr" onclick="ocultar()">
+                    MANTENER GRUPOS
+                   </a>
+                 </div>
+               </div>
+                <div class="row">
+                 <div class="col-sm-8">
+                   <a id="cerrar" class="abrir-cerrar" href="/listr" onclick="ocultar()">
+                    CONFIGURAR NOTIFICACIONES
+                   </a>
+                 </div>
+               </div> 
+             </div>
+            </div>
+         </div>
+         </td>
+    
+         <td td width="85%">
+        <div class="buzon-page">
+        
+         
+       
+         </td>
+         </tr>
+    </div>
+</div>
+</body>
+<%- include('partials/script'); -%>
+</html>

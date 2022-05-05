@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <%- include('partials/head'); -%> 
+
+ 
+    </head>
+    <body>
+        <%- include('partials/menu'); -%>
+        <div class="boies">
+        
+        
+            <div class="login-page">
+              <div class="form">
+                <form class="login-form" method="POST" action="/aca/user">
+                
+                  <input type="text" name="nombre" id="nombre" placeholder="Nombre" />
+                  <input type="text" name="login" id="login"   placeholder="Login"/>
+                   <input type="text" name="password" id="password" placeholder="Password" />   
+                    <select style=" height:40px; width:300px;" name="tipo" id="tipo" >
+                         <option value="Usuario">Usuario</option>
+                         <option value="Asociado">Asociado</option>
+                         <option value="Administrador">Administrador</option>
+                    </select>
+                   <hr style="border:2px;"/>
+                  <button>Crear</button>
+                  
+                </form>
+              </div>
+            </div>
+        </div>
+    </body>
+    
+<%- include('partials/script'); -%>
+    <style>
+   
+    </style>
+</html>

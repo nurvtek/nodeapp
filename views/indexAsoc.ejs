@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <%- include('partials/head'); -%> 
+</head>
+<body>
+<%- include('partials/menu'); -%>
+
+<div class="container-fluid bg-3 text-center">  
+<table style="width:100%">
+      <tr>
+      <td width="10%">
+          <div class="row">
+            <div class="col">
+             <div class="vmenu">
+               <div class="row">
+                 <div class="col-sm-8"> 
+                   <a id="abrir" class="abrir-cerrar"  href="/liste" onclick="mostrar()">
+                      MANTENER USUARIOS
+                   </a>
+                 </div>
+               </div>
+                 <div class="row">
+                 <div class="col-sm-8"> 
+                   <hr>
+                 </div>
+               </div>
+               <div class="row">
+                 <div class="col-sm-8">
+                   <a id="cerrar" class="abrir-cerrar" href="/listr" onclick="ocultar()">
+                    MANTENER GRUPOS
+                   </a>
+                 </div>
+               </div>
+                <div class="row">
+                 <div class="col-sm-8">
+                   <a id="cerrar" class="abrir-cerrar" href="/listr" onclick="ocultar()">
+                    CONFIGURAR NOTIFICACIONES
+                   </a>
+                 </div>
+               </div> 
+             </div>
+            </div>
+         </div>
+         </td>
+    
+    
+         <td td width="85%">
+        <div class="buzon-page">
+        
+         
+        
+        
+              <div class="bform">
+                <h4><%= page %>     <a title="Borrar" href="/aca/user"><img  height="40"  width="40" src="/usuario.png" alt="Borrar" /></a></h4><br>
+                <div class="row">
+                  <div class="col-sm-3">
+
+                    <p><strong>NOMBRE</strong></p>
+
+                  </div>
+                   
+                        <div class="col-sm-3"> 
+                    <p><strong>EMAIL</strong></p>
+
+                  </div>    
+                    
+                  <div class="col-sm-2"> 
+                      <p><strong>EMPRESA</strong></p>
+                  </div>
+                  <div class="col-sm-3"> 
+                    <p><strong>SECTOR</strong></p>
+                  </div>
+                  <div class="col-sm-2">
+                    <p></p> 
+                   </div>
+                </div>
+ 
+       
+
+                 <%for (var usuario in usuarios){ 
+                
+                %>
+                  <div class="row">
+                     <div class="col-sm-3">
+       
+                       <p><%= usuarios[usuario].nombre %></p> 
+      
+                     </div>
+                        
+                     <div class="col-sm-3"> 
+                        <p><%= usuarios[usuario].email %></p>
+     
+                     </div>
+                      
+                    
+                         <div class="col-sm-2"> 
+                        <p><%= usuarios[usuario].empresa %></p>
+     
+                     </div>
+                     <div class="col-sm-2"> 
+                      <p><%= usuarios[usuario].sector %></p>
+   
+                   </div>
+                      <div class="col-sm-2"> 
+                        <p>
+                        <a title="Borrar" href="/list/deleteUsr?id=<%= usuarios[usuario].id %>"><img  height="25"  width="25" src="/trash.png" alt="Borrar" /></a>
+                        </p>
+                     </div>
+                   
+                  </div>
+                 <%}%>
+
+               </div>
+           
+         </td>
+         </tr>
+    </div>
+</div>
+</body>
+<%- include('partials/script'); -%>
+</html>

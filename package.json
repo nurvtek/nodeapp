@@ -11,7 +11,21 @@
     "mocha": "^2.4.5",
     "mongodb": "^2.1.16",
     "morgan": "^1.7.0",
-    "object-assign":"4.1.0"
+    "object-assign":"4.1.0",
+    "body-parser":"*",
+    "code":"*",
+    "cors":"*",
+    "easy-soap-request":"*",
+    "express-session":"*",
+    "formidable":"*",
+    "mmoment":"*",
+    "mysql":"*",
+    "mysql2":"*",
+    "path":"*",
+    "read-excel-file":"*",
+    "request":"*",
+    "sequelize":"*",
+    "xml2js":"*"
   },
   "engine": {
     "node": "*",

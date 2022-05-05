@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Registro y Test</title>
+ 
+    <link href="http://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+ 
+    <link href="https://v4-alpha.getbootstrap.com/examples/narrow-jumbotron/narrow-jumbotron.css" rel="stylesheet">
+    <link href="../static/signup.css" rel="stylesheet">
+    <script src='../static/js/jquery-3.6.0.min.js'></script>
+    
+    
+  </head>
+ 
+  <body>
+ 
+    <div class="container">
+      <div class="header">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" ><a href="main">Home</a></li>
+            <li role="presentation"><a href="showSignUp">Registro</a></li>
+            <li role="presentation" class="active"><a href="showLogin">Ingreso</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">Evaluar Cumplimiento Seguridad Datos Personales</h3>
+      </div>
+ 
+      <div id='registro' class="jumbotron jumbotron-fluid">
+       <div class="container-fluid">
+        <h1>Registro</h1>
+        <form class="form-signin">
+        <label for="inputName" class="sr-only">Nombre y Apellido</label>
+        <input type="name" name="inputName" id="inputName" class="form-control" placeholder="Nombres Apellidos" required autofocus>
+        <label for="inputEmail" class="sr-only">Direccion Email</label>
+        <input type="email" name="inputEmail" id="inputEmail" class="form-control" placeholder="Direccion Email" required autofocus>
+        <label for="inputEmpresa" class="sr-only">Empresa</label>
+        <input type="name" name="inputEmpresa" id="inputEmpresa" class="form-control" placeholder="Nombre Organización" required>
+        <label for="inputTelefono" class="sr-only">Telefono</label>
+        <input type="name" name="inputTelefono" id="inputTelefono" class="form-control" placeholder="Nro Telefono" >
+        <label for="sectores" class="sr-only">Sector </label>
+        <select id="sectores" class="form-control" name="sectores" required>
+            <option value="Banca y Finanzas">Banca y Finanzas</option>
+            <option value="Seguros">Seguros</option>
+            <option value="Retail">Retail</option>
+            <option value="Servicios">Servicios</option>
+        </select>
+        <br>
+        <!-- button id="btnSignUp" class="btn btn-lg btn-primary btn-block" type="button">Test</button   -->
+        <button id="btntest" class="btn btn-lg btn-primary btn-block" onclick="tomaTest();" type="button">Test</button>
+        <div id="base"></div>
+      </form>
+      </div>
+ 
+    </div>
+    <div id="test" style="visibility:hidden" class="jumbotron jumbotron-fluid">
+        <div class="container-fluid">
+         <h1>Test de Evaluacion</h1><br><br><hr></hr>
+<form action="/computador" method="get">
+<input type="hidden" id="codproc" name="codproc" value="61c2adc05c817f09c46699ec5576e4663f7150e6"><br><br><hr>
+<h2><strong>Estratégico</strong></h2>
+<br><br><hr>
+<h4>Declaraciones estratégicas (Misión, Visión)</h4><hr></hr>
+<fieldset style="text-align: start;">
+<legend><strong>1</strong>Las declaraciones estratégicas de su organización, ¿consideran alguna referencia a la protección de datos personales?</legend>
+<div>
+<input type="radio" id="r1" name="r1"  value="1">
+<label for="1" >Si</label><br></br>
+</div>
+<div>
+<input type="radio" id="r1" name="r1"  value="0">
+<label for="1" >No</label><br></br>
+</div>
+<br><br><hr>
+<h4>Objetivos Estratégicos</h4><hr></hr>
+<br><br><br>
+</fieldset>
+<fieldset style="text-align: start;">
+<legend><strong>2</strong>¿Existe algún objetivo estratégico relacionado con la protección de datos personales?</legend>
+<div>
+<input type="radio" id="r2" name="r2" onclick="rt('rt2');" value="1">
+<label for="2" >Si</label><br></br>
+</div>
+<div>
+<input type="radio" id="r2" name="r2" onclick="rf('rt2');" value="0">
+<label for="2" >No</label><br></br>
+</div>
+<div id="rt2" style="display:none"><fieldset style="text-align: start;">
+<legend><strong>2.1</strong>Dichos objetivos dicen relación con:</legend>
+<div>
+<input type="checkbox" id="r2.13" name="r2.13"   value="0.33"><label for="2.13" > Datos personales de los trabajadores </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r2.14" name="r2.14"   value="0.33"><label for="2.14" > Datos personales de los Proveedores </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r2.15" name="r2.15"   value="0.33"><label for="2.15" > Datos personales de los Clientes </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r2.16" name="r2.16"   value="0"><label for="2.16" > Ninguna de las anteriores </label><br></div>
+<br>
+</div>
+<br><br><hr>
+<h4>Metas e Indicadores</h4><hr></hr>
+<br><br><br>
+</fieldset>
+<fieldset style="text-align: start;">
+<legend><strong>3</strong>¿ Existen metas e indicadores que evalúen los resultados en materia de protección de datos personales?</legend>
+<div>
+<input type="radio" id="r3" name="r3" onclick="rt('rt3');" value="1">
+<label for="3" >Si</label><br></br>
+</div>
+<div>
+<input type="radio" id="r3" name="r3" onclick="rf('rt3');" value="0">
+<label for="3" >No</label><br></br>
+</div>
+<div id="rt3" style="display:none"><fieldset style="text-align: start;">
+<legend><strong>3.1</strong>Dichas metas e indicadores dicen relación con:</legend>
+<div>
+<input type="checkbox" id="r3.18" name="r3.18"   value="0.33"><label for="3.18" > Datos personales de los trabajadores </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r3.19" name="r3.19"   value="0.33"><label for="3.19" > Datos personales de los Proveedores </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r3.110" name="r3.110"   value="0.33"><label for="3.110" > Datos personales de los Clientes </label><br></div>
+<br>
+<div>
+<input type="checkbox" id="r3.111" name="r3.111"   value="0"><label for="3.111" > Ninguna de las anteriores </label><br></div>
+<br>
+</fieldset>
+
+    </div>
+    
+      <footer class="footer">
+        <button id="btntest" class="btn btn-lg btn-primary btn-block" type="submit" value="Submit">Evaluar</button>
+        <p>&copy; Cdoenlinea 2015</p>
+      </footer>
+ 
+    </div>
+</form>
+    <script type="text/javascript">
+        function rt(valor){
+           
+           var regi = document.getElementById(valor);
+           regi.style.display = 'block';
+           
+        }
+        function rf(valor){
+           
+           var regi = document.getElementById(valor);
+           regi.style.display = 'none';
+           
+        }
+       
+       function r1(){
+           var divi = document.getElementById('r1');
+           var regi = document.getElementById('sr1');
+           regi.style.visibility = 'visible';
+           
+        }
+        function tomaTest(){
+           var divi = document.getElementById('test');
+           var regi = document.getElementById('registro');
+           divi.style.visibility = 'visible';
+         //  regi.style.visibility = 'hidden';
+        }
+        $(document).ready(function() {
+            $('#btnSignUp').click(function() {
+         
+                $.ajax({
+                    url: 'signUp',
+                    data: $('form').serialize(),
+                    type: 'POST',
+                    success: function(response) {
+                        var data = response;
+
+                        var parsed = JSON.parse(data);
+
+                        document.getElementById('base').innerHTML = parsed.html;
+                        console.log(response);
+                    },
+                    error: function(error) {
+                        console.log(error);
+                    }
+                });
+            });
+        });
+    </script>
+  </body>
+</html>

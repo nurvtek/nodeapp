@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-radar.min.js"></script>
+    <style type="text/css">
+      html, body, #container {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+     
+
+      <div class="jumbotron" style="text-align: center;">
+          <h1>Resultado del Test</h1>
+          <p class="lead"></p>
+          
+      </div>
+
+      <div class="row marketing" style="text-align: center;">
+          <div class="col-lg-6">
+              <h4>Declaraciones estratégicas</h4>
+              <p>Fortaleza:  Se considero la protección de los datos personales desde la estratégia.</p>
+
+              <h4>Objetivos Estratégicos</h4>
+              <p>Debilidad:  No se ha considerado la protección de los datos personales en la dimensión de Clientes.</p>
+
+              <h4>Metas e Indicadores</h4>
+              <p>Debilidad: No se ha considerado la protección de los datos personales en la dimensión de Clientes</p>
+          </div>
+
+          <div class="col-lg-6">
+            <h4>Declaraciones estratégicas</h4>
+            <p>Fortaleza:  Se considero la protección de los datos personales desde la estratégia.</p>
+
+            <h4>Objetivos Estratégicos</h4>
+            <p>Debilidad:  No se ha considerado la protección de los datos personales en la dimensión de Clientes.</p>
+
+            <h4>Metas e Indicadores</h4>
+            <p>Debilidad: No se ha considerado la protección de los datos personales en la dimensión de Clientes</p>
+        </div>
+      </div>
+
+      <footer class="footer">
+          <p>&copy; Tuwe 2015</p>
+      </footer>
+
+  </div>
+    <div id="container"></div>
+  </body>
+  <script>
+    anychart.onDocumentReady(function () {
+    // our data from bulbapedia
+      var data1 = [
+        {x: "Objetivos Estratégicos", value: 39},
+        {x: "Metas e Indicadores", value: 52},
+        {x: "Control de Gestión", value: 43},
+        {x: "Iniciativas Estratégicas", value: 60},
+        {x: "Gestión de Riesgos", value: 50},
+        {x: "Declaraciones estratégicas", value: 100},
+      ];
+
+      var data2 = [
+        {x: "Objetivos Estratégicos", value: 45},
+        {x: "Metas e Indicadores", value: 49},
+        {x: "Control de Gestión", value: 49},
+        {x: "Iniciativas Estratégicas", value: 65},
+        {x: "Gestión de Riesgos", value: 65},
+        {x: "Declaraciones estratégicas", value: 100},
+      ];  
+
+      var data3 = [
+        {x: "Objetivos Estratégicos", value: 44},
+        {x: "Metas e Indicadores", value: 48},
+        {x: "Control de Gestión", value: 65},
+        {x: "Iniciativas Estratégicas", value: 50},
+        {x: "Gestión de Riesgos", value: 64},
+        {x: "Declaraciones estratégicas", value: 100},
+      ];  
+
+      // create radar chart
+      var chart = anychart.radar();
+      // set chart yScale settings
+      chart.yScale()
+        .minimum(35)
+        .maximum(100)
+        .ticks({'interval':5});
+
+      // create first series
+      chart.line(data1)
+      // create second series
+      chart.line(data2)
+      // create third series
+      chart.line(data3)
+
+      // set chart title
+      chart.title("Resultado del Test");
+
+      // set container id for the chart
+      chart.container('container');
+      // initiate chart drawing
+      chart.draw();
+
+    });
+  </script>
+</html>

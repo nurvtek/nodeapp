@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <%- include('partials/head'); -%> 
+
+ 
+    </head>
+    <body>
+        <%- include('partials/menu'); -%>
+        <div class="boies">
+        
+        
+            <div class="login-page">
+              <div class="form">
+                <form class="login-form" method="GET" action="/list">
+                
+                  <input type="text" name="destinatario" id="destinatario" placeholder="Destinatario" value='<%- msg.destinatario -%>'/>
+                  <input type="text" name="remitente" id="remitente"   value='<%- msg.remitente -%>'/>
+                   <input type="text" name="asunto" id="asunto" placeholder="Asunto" value='<%- msg.asunto -%>'/>    
+                  <p><textarea cols="36" rows="5" name="body" id="body"><%- msg.cuerpo -%>
+                    </textarea></p>
+                  <button>Cerrar</button>
+                  
+                </form>
+              </div>
+            </div>
+        </div>
+    </body>
+    
+<%- include('partials/script'); -%>
+    <style>
+   
+    </style>
+</html>

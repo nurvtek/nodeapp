@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <%- include('partials/head2'); -%> 
+
+ 
+    </head>
+    <body>
+        <%- include('partials/menu'); -%>
+        <div class="boies">
+        
+        
+            <div class="search-page">
+              <div class="form">
+                <form class="login-form" method="GET" action="/list/getUsuarios">
+                
+                <p>  <input  type="text" name="apat" id="apat" placeholder="Apellido Paterno" /></p>
+               <p>   <input type="text" name="amat" id="amat"   placeholder="Apellido Materno"/></p>
+               <p>    <input size="50" type="text" name="nombre" id="nombre" placeholder="Nombre" />   </p>
+                   <hr style="border:2px;"/>
+                 <div class="row">
+                    <div class="col-sm-2">
+                    </div>    
+                     <div class="col-sm-4">
+                          </div>
+                    <div class="col-sm-4">
+                        <p>   <button >Buscar</button>  </p>
+                    </div>  
+                    
+                        <div class="col-sm-2">
+             
+                        </div>
+                    </div>
+                  
+                  
+                </form>
+             
+            <div class="row">
+                  <div class="col-sm-2">
+
+                    <p><strong>Rut</strong></p>
+
+                  </div>
+                <div class="col-sm-4">
+
+                    <p><strong>Nombre</strong></p>
+
+                  </div>
+                <div class="col-sm-4">
+
+                    <p><strong>Apellido</strong></p>
+
+                  </div>
+                <div class="col-sm-2">
+
+                    <p><strong> </strong></p>
+
+                  </div>
+                  </div>
+            <%for (var persona in personas){ 
+                
+                %>
+                  <div class="row">
+                     <div class="col-sm-2">
+       
+                       <p><%= personas[persona].rut %></p> 
+      
+                     </div>
+                        
+                     <div class="col-sm-4"> 
+                        <p><%= personas[persona].nomb %></p>
+     
+                     </div>
+                      
+                    
+                         <div class="col-sm-4"> 
+                        <p><%= personas[persona].apat %></p>
+     
+                     </div>
+                      <div class="col-sm-2"> 
+                        <p>
+                        <a title="Enviar" href="/list/procesa?destinatario=<%= personas[persona].rut %>"><img  height="25"  width="25" src="/envio.png" alt="Borrar" /></a>
+                        </p>
+                     </div>
+                   
+                  </div>
+                 <%}%>
+                </div>
+                 </div>
+        </div>
+    </body>
+    
+<%- include('partials/script'); -%>
+    <style>
+   
+    </style>
+</html>

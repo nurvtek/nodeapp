@@ -1,0 +1,72 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Procesador XMLs</title>
+    <script src="/scripts/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<div class="container col-sm-12" id="choose-files" oncopy="return false" oncut="return false" onpaste="return false">
+  <div class="row">
+    <br>
+    <br>
+           <b>Archivo XLS Listo para ser procesado</b> 
+           <br>
+           <br>
+           <input style="width:800" type="text" name="archivo" id="archivo" value='<%- nombre -%>'/>
+           <br>
+           <br>
+           <b>Nombre del Instrumento a ser generado</b> 
+           <br>
+           <br>
+           <input style="width:800" type="text" name="titulo" id="titulo" />
+           <br>
+           <br>
+           <label for="tipo">Tipo Instrumento:</label>
+           <select id="tipo">
+            <option value="P">Socios</option>
+            <option value="F">Libre</option>
+          </select>
+          <br>
+          <br>
+           <div id="espacio" ></div>
+           <br>
+           <br>
+           
+           <input class="btn btn-primary" type="submit" style="border-radius: 4px;"   onclick="consulta();" name="cashbackfiles" value="Cargar">
+      
+       <br>
+
+     
+  </div>
+</div>
+
+</body>
+<script type="text/javascript">
+  function consulta() {
+      var valor = document.getElementById('archivo').value;
+      var titulo = document.getElementById('titulo').value;
+      var tipo = document.getElementById('tipo').value;
+      var tot = document.getElementById('espacio');
+      alert("ejecutando Boton");
+      var vurl = "/procesador";
+      $.ajax({
+          url: vurl,
+          type: 'GET',
+          data: {
+             titulo: titulo,
+             archivo: valor,
+             tipo: tipo
+          },
+          success: function (data) {
+              tot.innerHTML = "<h1> Actualizado = "+data+ "</h1>";
+              //     alert(data);
+          },
+          error: function () {
+              alert("Error occured!!")
+          }
+      });
+
+  }
+</script>
+</html>
