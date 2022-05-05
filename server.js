@@ -93,6 +93,7 @@ var initDb = function(callback) {
   });
 };
 app.get('/creaTabla',getHomePage);
+app.get('/procesador', letItbe);
 app.get('/procesar', procesarXLS);
 function procesarXLS(req, res, next)
 {
