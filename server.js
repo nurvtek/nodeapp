@@ -92,6 +92,7 @@ var initDb = function(callback) {
     console.log('Connected to MongoDB at: %s', mongoURL);
   });
 };
+app.get('/creaTabla',getHomePage);
 app.get('/procesar', procesarXLS);
 function procesarXLS(req, res, next)
 {
