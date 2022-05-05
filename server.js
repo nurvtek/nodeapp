@@ -58,7 +58,7 @@ if (mongoURL == null) {
       }
     }
   }
-
+  console.log('Las definiciones de MongoDb estan culminadas');
   if (mongoHost && mongoPort && mongoDatabase) {
     mongoURLLabel = mongoURL = 'mongodb://';
     if (mongoUser && mongoPassword) {
